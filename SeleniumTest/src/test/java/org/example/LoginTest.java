@@ -32,9 +32,9 @@ public class LoginTest {
     @Before
     public void initialize(){
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
+        /*options.addArguments("--headless");
         options.addArguments("--disable-gpu"); // Optional: for better compatibility on some platforms
-        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--window-size=1920,1080");*/
         driver=new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.saucedemo.com/");
@@ -63,7 +63,7 @@ public class LoginTest {
 
     @After
     public void teardown(){
-
+        driver.quit();
     }
 
 
